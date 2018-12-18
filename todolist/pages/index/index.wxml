@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <input type="text" bindconfirm="fn" value="{{newtodo}}" placeholder="待办事项"/>
+  <h4>未完成事件</h4>
+  <ul class="uu">
+    <li wx:for="{{todolist}}" wx:for-item="item" data-index="{{index}}" wx:if="{{!(item.none)}}" bindtap="fd" >
+      {{item.name}}
+    </li>
+    <view>
+      <view > 没有未完成事件</view>
+    </view>
+  </ul>
+  <h4 class="hh">已完成事件</h4>
+  <ul class="uu oo">
+    <li wx:for="{{todolist}}" wx:for-item="item" data-index="{{index}}" wx:if="{{item.none}}" bindtap="fd">
+      {{item.name}}
+    </li>
+  </ul>
+</view>
